@@ -39,7 +39,6 @@ io.engine.use(sessionMiddleware);
 io.on("connection", handleConnection);
 
 app.get("/", home);
-app.post("/sendChat", sendChat);
 
 function home(req, res) {
     const html = fs.readFileSync("templates/index.html").toString();
@@ -61,27 +60,9 @@ function handleConnection(socket) {
 
         msg = escape(msg);
 
-        console.log(session.id + "( " + session.socketId + " ) " + " sent: "  + msg); // Debug log
+        console.log(session.id + " ( " + session.socketId + " ) " + " sent: "  + msg); // Debug log
         io.emit("chat", { id: socket.id, msg });
     });
 }
 
-function sendChat(req, res) {
-    const { msg } = req.body;
-    const session = req.session;
 
-    if (!session.socketId) {
-        return res.status(401).send("Unauthorized");
-    }
-
-    if (!msg || !validator.isLength(msg, { min: 1, max: 500 })) {
-        return res.status(400).send("Invalid message");
-    }
-
-    const chatMessage = { sessionId: req.session.id, text: msg };
-
-    console.log("Sending message from server:", chatMessage); // Debug log
-    io.to(session.socketId).emit("chat", { id: session.socketId, msg: escape(msg) });
-
-    res.send("Message sent");
-}
