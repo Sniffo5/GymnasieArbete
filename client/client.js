@@ -18,7 +18,7 @@ function handleSubmit(e) {
 }
 
 socketClient.on("chat", function (data) { 
-    const messageElement = document.createElement("div");
+    const messageElement = document.createElement("p");
     messageElement.textContent = data.msg; 
     messagesDiv.appendChild(messageElement);
     messagesDiv.scrollTop = messagesDiv.scrollHeight;

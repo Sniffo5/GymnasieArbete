@@ -14,3 +14,92 @@ header h1{
     margin: 0;
     font-size: 50px;
 }
+header a{
+    text-decoration: none; 
+    color: black;
+}
+
+
+/* ---------------------------------------------------------- */
+
+
+.logreg{
+    margin-top: 3%;
+    border: 1px solid lightgrey;
+    width: 50%;
+    margin-left: 25%;
+    border-radius: 20px;
+    background-color: #edf2f7;
+    text-align: center;
+}
+
+.logreg h2 {
+    margin-top: 3%;
+    font-size: 2rem;
+}
+
+form{
+    margin-top: 2%;
+    width: 100%;
+    align-items: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    row-gap: 3vh
+
+}
+
+
+input{
+    padding: 1%;
+    width: 50%;
+    background-color: #edf2f7;
+    border: none;
+    border-bottom: 1px solid lightgray;
+    justify-self: center;
+
+
+}
+
+#submitButton{
+    height: 5vh;
+    width: 52%;
+    background-color: lightslategray;
+    color: white;
+    border-radius: 1rem;
+    justify-self: center;
+    border: none;
+}
+
+#createAcc {
+    margin-bottom: 2vh;
+}
+#createAcc a {
+    color: #4186da;
+    border-bottom: 1px solid #4186da;
+    text-decoration: none; 
+}
+
+
+/* ---------------------------------------------------------- */
+
+
+#chat{
+    background-color: #edf2f77e;
+    width: 70%;
+    height: calc(100vh - 200px);
+    margin: auto;
+    margin-top: 25px;
+    border: 1px solid black;
+    overflow-y:scroll;
+    position: relative;
+}
+#chat #form{
+    position: absolute;
+    bottom: 0;
+    width: 70%;
+    align-items: center;
+    display: flex;
+}
+#chat #form button{
+    width: 50px;
+}
