@@ -19,7 +19,8 @@ function handleSubmit(e) {
 
 socketClient.on("chat", function (data) { 
     const messageElement = document.createElement("p");
-    messageElement.textContent = data.msg; 
+    messageElement.textContent = data.msg;
+    messageElement.className = data.id;
     messagesDiv.appendChild(messageElement);
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
 });

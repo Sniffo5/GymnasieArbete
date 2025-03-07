@@ -129,7 +129,7 @@ function handleConnection(socket) {
         msg = escape(msg);
 
         console.log(session.id + " ( " + session.socketId + " ) " + " sent: "  + msg); // Debug log
-        io.emit("chat", { id: socket.id, msg });
+        io.emit("chat", { id: session.id, msg });
     });
 }
 
