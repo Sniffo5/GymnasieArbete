@@ -85,7 +85,7 @@ input{
 
 #chat{
     background-color: #edf2f77e;
-    width: 70%;
+    width: 70vw;
     height: calc(100vh - 200px);
     margin: auto;
     margin-top: 25px;
@@ -118,5 +118,21 @@ input{
     border-radius: 15px 0px 0px 15px;
     border-bottom: none;
     padding-left: 15px;
+}
+#messages p{
+    margin-left: auto;
+    min-width: fit-content;
+    max-width: 10vw;
+    padding: 2%;
+    border-radius: 5px;
+    align-items: center;
+    margin: 0.5%;
+    background-color: lightblue;
+    text-align: center;
+}
+
+.self {
+    background-color: lightgreen !important;
+
 }
 
